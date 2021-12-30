@@ -2,16 +2,18 @@ package practice.example.order;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
-import practice.example.member.Grade;
-import practice.example.member.Member;
-import practice.example.member.MemberService;
-import practice.example.member.MemberServiceImpl;
+import practice.example.AppConfig;
+import practice.example.member.*;
 
 public class OrderServiceTest {
     @Test
     void createOrder() {
-        MemberService memberService = new MemberServiceImpl();
-        OrderService orderService = new OrderServiceImpl(); // OrderService 는 같은 패키지에 있기 때문에 import 하지 않아도된다.
+//        MemberService memberService = new MemberServiceImpl();
+//        OrderService orderService = new OrderServiceImpl(); // OrderService 는 같은 패키지에 있기 때문에 import 하지 않아도된다.
+
+        AppConfig appConfig= new AppConfig();
+        MemberService memberService=appConfig.memberService();
+        OrderService orderService=appConfig.orderService();
 
         Member member=new Member(1L,"memberA", Grade.VIP);
         memberService.join(member);

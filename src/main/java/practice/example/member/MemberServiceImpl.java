@@ -4,7 +4,15 @@ package practice.example.member;
 
 public class MemberServiceImpl implements MemberService{
 
-    private final MemberRepository memberRepository = new MemoryMemeberRepository();
+    private final MemberRepository memberRepository;
+    // 인터페이스만 의존중
+
+    public MemberServiceImpl(MemberRepository memberRepository){
+        this.memberRepository=memberRepository;
+    }
+    // 생성자를 통해서 DIP / OCP 지키도록 설계
+
+//    private final MemberRepository memberRepository = new MemoryMemeberRepository();
 
     @Override
     public void join(Member member) {
