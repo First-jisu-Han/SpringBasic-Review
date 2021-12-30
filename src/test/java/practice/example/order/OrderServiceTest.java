@@ -1,4 +1,4 @@
-package practice.example.oder;
+package practice.example.order;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -6,9 +6,6 @@ import practice.example.member.Grade;
 import practice.example.member.Member;
 import practice.example.member.MemberService;
 import practice.example.member.MemberServiceImpl;
-import practice.example.order.Order;
-import practice.example.order.OrderService;
-import practice.example.order.OrderServiceImpl;
 
 public class OrderServiceTest {
     @Test
