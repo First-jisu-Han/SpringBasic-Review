@@ -16,6 +16,10 @@ public class Order {
     }
     // getter setter 설정 - 자바 빈 규약
 
+    public int calculatePrice(){
+        return itemPrice-discountPrice;
+    }
+
     public Long getMemberId() {
         return memberId;
     }
