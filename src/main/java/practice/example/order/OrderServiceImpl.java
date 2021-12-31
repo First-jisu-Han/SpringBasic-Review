@@ -1,12 +1,8 @@
 package practice.example.order;
 
 import practice.example.discount.DiscountPolicy;
-import practice.example.discount.FixDiscountPolicy;
-import practice.example.discount.RateDiscountPolicy;
-import practice.example.member.Grade;
 import practice.example.member.Member;
 import practice.example.member.MemberRepository;
-import practice.example.member.MemoryMemeberRepository;
 
 // OrderServiceImpl은 주문서비스만 집중하도록 - AppConfig에서 필요한 것들을 다룬다.
 public class OrderServiceImpl implements OrderService {

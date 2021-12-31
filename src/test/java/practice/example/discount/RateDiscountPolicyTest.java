@@ -5,9 +5,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import practice.example.member.Grade;
 import practice.example.member.Member;
-import practice.example.member.MemoryMemeberRepository;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class RateDiscountPolicyTest {
 
