@@ -20,6 +20,8 @@ class RateDiscountPolicyTest {
         // then
         Assertions.assertThat(discount).isEqualTo(1000);
     }
+
+
     @Test
     @DisplayName("VIP가 아닐때에는 할인 실패해야한다")
     void vip_x(){
