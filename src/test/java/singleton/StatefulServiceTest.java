@@ -16,13 +16,12 @@ public class StatefulServiceTest {
         StatefulService statefulService1=ac.getBean("statefulService",StatefulService.class);
         StatefulService statefulService2=ac.getBean("statefulService",StatefulService.class);
 
-        statefulService1.order("UserA",10000);
-        statefulService2.order("UserB",20000);
+        int userAPrice=statefulService1.order("UserA",10000);
+        int userBProce=statefulService2.order("UserB",20000);
 
-        System.out.println("statefulService1.getPrice() = " + statefulService1.getPrice());
-// Price 가 20000이 나오는 문제점이 존재한다.
+        System.out.println("userA의 지불비용= " + userAPrice);
 
-        Assertions.assertThat(statefulService1.getPrice()).isEqualTo(20000);
+        Assertions.assertThat(userAPrice).isEqualTo(10000);
 
     }
     @Configuration
