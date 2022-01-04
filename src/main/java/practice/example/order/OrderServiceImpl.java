@@ -1,10 +1,14 @@
 package practice.example.order;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import practice.example.discount.DiscountPolicy;
 import practice.example.member.Member;
 import practice.example.member.MemberRepository;
 
 // OrderServiceImpl은 주문서비스만 집중하도록 - AppConfig에서 필요한 것들을 다룬다.
+
+@Component
 public class OrderServiceImpl implements OrderService {
 
 //    private final MemberRepository memberRepository = new MemoryMemeberRepository();
@@ -18,6 +22,7 @@ public class OrderServiceImpl implements OrderService {
 
     // DiscountPolicy의 구현체 와 MemberRepository의 구현체 가 필요함.
 
+    @Autowired
     public OrderServiceImpl(DiscountPolicy discountPolicy, MemberRepository memberRepository) {
         this.discountPolicy = discountPolicy;
         this.memberRepository = memberRepository;
