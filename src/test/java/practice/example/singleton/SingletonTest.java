@@ -1,4 +1,4 @@
-package singleton;
+package practice.example.singleton;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;

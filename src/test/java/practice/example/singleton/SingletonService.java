@@ -1,4 +1,4 @@
-package singleton;
+package practice.example.singleton;
 
 public class SingletonService {
 

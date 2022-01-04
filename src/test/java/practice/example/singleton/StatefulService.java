@@ -1,4 +1,4 @@
-package singleton;
+package practice.example.singleton;
 
 public class StatefulService {
     // 무상태 유지가 중요함.

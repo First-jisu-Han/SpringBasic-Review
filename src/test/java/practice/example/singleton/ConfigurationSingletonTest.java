@@ -1,4 +1,4 @@
-package singleton;
+package practice.example.singleton;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -7,9 +7,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import practice.example.AppConfig;
 import practice.example.member.MemberRepository;
-import practice.example.member.MemberService;
 import practice.example.member.MemberServiceImpl;
-import practice.example.order.OrderService;
 import practice.example.order.OrderServiceImpl;
 
 public class ConfigurationSingletonTest {
