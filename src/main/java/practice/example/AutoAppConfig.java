@@ -1,9 +1,12 @@
 package practice.example;
 
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
+import practice.example.member.MemberRepository;
+import practice.example.member.MemoryMemberRepository;
 
 import static org.springframework.context.annotation.ComponentScan.*;
 
@@ -14,5 +17,5 @@ import static org.springframework.context.annotation.ComponentScan.*;
 // 보통은 그냥 @ComponetScan 을 사용하는데, AppConfig.class 를 남겨놓기 위한 장치이다.
 
 public class AutoAppConfig {
-    
+
 }
