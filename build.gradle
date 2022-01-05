@@ -14,9 +14,25 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.projectlombok:lombok:1.18.18'
+	implementation 'org.projectlombok:lombok:1.18.18'
+
+	// 롬복 라이브러리 추가
+	compileOnly 'rog.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	testCompileOnly ' org.projcetlombok:lombok'
+	testAnnotationProcessor 'org.projectlombok:lombok'
+
+	// 롬복 라이브러리 추가 완료
+
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
 }
 
 test {
 	useJUnitPlatform()
 }
+
+

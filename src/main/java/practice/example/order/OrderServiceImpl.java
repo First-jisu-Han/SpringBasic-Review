@@ -1,5 +1,6 @@
 package practice.example.order;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import practice.example.discount.DiscountPolicy;
@@ -10,6 +11,7 @@ import practice.example.member.MemoryMemberRepository;
 // OrderServiceImpl은 주문서비스만 집중하도록 - AppConfig에서 필요한 것들을 다룬다.
 
 @Component
+@RequiredArgsConstructor // final이 붙은 필드를 모아서, 롬복 라이브러리로 생성자 코드를 만들어줌.
 public class OrderServiceImpl implements OrderService {
 
 //    private final MemberRepository memberRepository = new MemoryMemeberRepository();
@@ -21,18 +23,6 @@ public class OrderServiceImpl implements OrderService {
     private final DiscountPolicy discountPolicy;
     private final MemberRepository memberRepository;
 
-    // DiscountPolicy의 구현체 와 MemberRepository의 구현체 가 필요함.
-
-//    @Autowired
-//    public void setMemberRepository(MemberRepository memberRepository){
-//        this.memberRepository=memberRepository;
-//    }
-
-    @Autowired
-    public OrderServiceImpl(DiscountPolicy discountPolicy, MemberRepository memberRepository) {
-        this.discountPolicy = discountPolicy;
-        this.memberRepository = memberRepository;
-    }
 
 
     // 따라서- 구현체에만 의존하도록 DIP / OCP 지키도록 코드를 변경함 -> 이렇게 사용하면 NullPointerException이 생긴다.
