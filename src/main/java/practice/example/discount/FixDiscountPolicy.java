@@ -6,7 +6,6 @@ import practice.example.member.Grade;
 import practice.example.member.Member;
 
 @Component
-@Qualifier("fixDiscountPolicy")
 public class FixDiscountPolicy implements DiscountPolicy{
 
 
