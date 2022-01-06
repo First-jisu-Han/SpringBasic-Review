@@ -1,11 +1,12 @@
 package practice.example.discount;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import practice.example.member.Grade;
 import practice.example.member.Member;
 
-
 @Component
+@Qualifier("mainDiscountPolicy")
 public class RateDiscountPolicy implements DiscountPolicy {
 
     private int discountPercent = 10;

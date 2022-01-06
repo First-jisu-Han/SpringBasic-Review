@@ -3,6 +3,7 @@ package practice.example.order;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import practice.example.AppConfig;
+import practice.example.AutoAppConfig;
 import practice.example.member.Grade;
 import practice.example.member.Member;
 import practice.example.member.MemberService;

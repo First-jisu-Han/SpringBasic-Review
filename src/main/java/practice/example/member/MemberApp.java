@@ -8,7 +8,6 @@ import practice.example.AppConfig;
 // 자바 코드로 테스트 해본다
 public class MemberApp {
     public static void main(String[] args) {
-//
 //        AppConfig appConfig= new AppConfig();
 //        MemberService memberService=appConfig.memberService();
 
