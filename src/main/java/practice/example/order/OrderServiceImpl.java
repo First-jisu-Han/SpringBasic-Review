@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import practice.example.annotation.MainDiscountPolicy;
 import practice.example.discount.DiscountPolicy;
 import practice.example.discount.RateDiscountPolicy;
 import practice.example.member.Member;

@@ -6,6 +6,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import practice.example.AutoAppConfig;
 import practice.example.discount.DiscountPolicy;
+import practice.example.discount.FixDiscountPolicy;
 import practice.example.discount.RateDiscountPolicy;
 import practice.example.member.MemberService;
 import practice.example.order.OrderService;

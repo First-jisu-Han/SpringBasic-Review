@@ -3,6 +3,7 @@ package practice.example.discount;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
+import practice.example.annotation.MainDiscountPolicy;
 import practice.example.member.Grade;
 import practice.example.member.Member;
 
