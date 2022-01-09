@@ -14,17 +14,14 @@ import javax.servlet.http.HttpServletRequest;
 public class LogDemoController {
 
     private final LogService logService;
-    private final ObjectProvider<MyLogger> myLoggerProvider;
+    private final MyLogger myLogger;
 
     @RequestMapping("log-demo")
-    @ResponseBody
+    @ResponseBody  // http의 헤더부분과 body부분 중 body 부분 -> 바디부에 데이터를 내려줌
     // HttpServletRequest 를 통해서 요청 URL을 받음
     public String logDemo(HttpServletRequest request){
-        MyLogger myLogger=myLoggerProvider.getObject();  // 필요한 시점인 이때 Provider를 통해서 주입받는다. 
         String requestURL = request.getRequestURI().toString();
-        // 이렇게 받은 requestURL값을 mtLogger에 저장한다. myLoggerㄴ는 HTTP 요청당 각각 구분되므로, 다른 HTTP 요청때문에 값이 섞일 일 없다.
         myLogger.setRequestURL(requestURL);
-        // 컨트롤러에서 controller test라는 로그를 남긴다.
         myLogger.log("controller test");
         logService.logic("testID");
         return "OK";
