@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Scope;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import javax.inject.Provider;
 
 public class SingletonWithPrototypeTest1 {
     @Test
@@ -64,10 +65,10 @@ public class SingletonWithPrototypeTest1 {
     @Scope("singleton")
     static class ClientBean{
         @Autowired
-        private ObjectProvider<PrototypeBean> prototypeBeanProvider;
+        private Provider<PrototypeBean> prototypeBeanProvider; // javax.injection 쪽 라이브러리를 사용해야한다.
 
         public int logic(){
-            PrototypeBean prototypeBean=prototypeBeanProvider.getObject(); // 프로토 타입 빈을 찾아서 반환
+            PrototypeBean prototypeBean=prototypeBeanProvider.get(); // 프로토 타입 빈을 찾아서 반환
             int count= prototypeBean.getCount();
             return count;
         }
