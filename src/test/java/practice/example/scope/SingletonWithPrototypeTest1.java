@@ -63,13 +63,21 @@ public class SingletonWithPrototypeTest1 {
 
     @Scope("singleton")
     static class ClientBean{
-        private final PrototypeBean prototypeBean;   // 생성시점에 이미 주입 , 두번쨰 객첼흘 넘겨받아도 이미 싱글톤으로 생성되어있는 객체를 같이 쓰게되는것이다.
+//        private final PrototypeBean prototypeBean;   // 생성시점에 이미 주입 , 두번쨰 객첼흘 넘겨받아도 이미 싱글톤으로 생성되어있는 객체를 같이 쓰게되는것이다.
 
-        @Autowired
-        public ClientBean(PrototypeBean prototypeBean) {
-            this.prototypeBean = prototypeBean;
-        }
+//        @Autowired
+//        public ClientBean(PrototypeBean prototypeBean) {
+//            this.prototypeBean = prototypeBean;
+//        }
+
+        @Autowired // 서로 다른 프로토타입 빈을 주입받기 위한 장치 DL이라고 한다 Dependency LookUp 이라고 한다.
+        private ApplicationContext ac;
+
         public int logic(){
+            PrototypeBean prototypeBean=ac.getBean(PrototypeBean.class);
+            // logic() 메서드를 호출할때마다 새로운 프로토타입 빈을 주입받을 것이다.
+
+            System.out.println(prototypeBean);
             prototypeBean.addCount();
             int count= prototypeBean.getCount();
             return count;
